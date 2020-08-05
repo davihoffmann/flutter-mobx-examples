@@ -1,14 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx_example/providerExample/controller.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_mobx_example/get_itExample/controller.dart';
+import 'package:flutter_mobx_example/get_itExample/home.dart';
+import 'package:get_it/get_it.dart';
 
-import 'providerExample/home.dart';
 
 void main() {
+  GetIt getit = GetIt.I;
+
+  getit.registerSingleton<ClientController>(ClientController());
+
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+/** Provider Example
+ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -29,3 +49,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+ */
