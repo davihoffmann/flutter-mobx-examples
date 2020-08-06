@@ -1,9 +1,11 @@
+
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx_example/get_itExample/controller.dart';
-import 'package:flutter_mobx_example/get_itExample/home.dart';
-import 'package:get_it/get_it.dart';
+import 'package:flutter_mobx_example/observableListExample/app_widget.dart';
+
+void main() => runApp(AppWidget());
 
 
+/* GET IT Example
 void main() {
   GetIt getit = GetIt.I;
 
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(),
     );
   }
-}
+}*/
 
 /** Provider Example
  class MyApp extends StatelessWidget {
