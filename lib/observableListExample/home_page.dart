@@ -60,6 +60,7 @@ class _HomepageState extends State<Homepage> {
       appBar: AppBar(
         title: TextField(
           decoration: InputDecoration(hintText: "Pesquisa..."),
+          onChanged: controller.setFilter,
         ),
         actions: <Widget>[
           Observer(builder: (context) {
@@ -71,10 +72,16 @@ class _HomepageState extends State<Homepage> {
         ],
       ),
       body: Observer(builder: (context) {
+        if(controller.output.data == null) {
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+
         return ListView.builder(
-          itemCount: controller.listItems.length,
+          itemCount: controller.output.data.length,
           itemBuilder: (context, index) {
-            var item = controller.listItems[index];
+            var item = controller.output.data[index];
             return ItemWidget(
               item: item,
               removeClicked: () => controller.removeItem(item),

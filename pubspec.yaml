@@ -32,6 +32,7 @@ dependencies:
   flutter_mobx: ^1.1.0+1
   provider: ^4.3.1
   get_it:
+  rxdart: ^0.23.1
 
 dev_dependencies:
   mobx_codegen:
