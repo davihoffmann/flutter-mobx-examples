@@ -11,6 +11,8 @@ abstract class _ItemModelBase with Store {
   @observable
   bool check;
 
+  _ItemModelBase({this.title, this.check = false});
+
   @action
   setTitle(String value) => title = value;
 
